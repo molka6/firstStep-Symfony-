@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+        
+        
+        
+        
+        {% block body %}
+        
+       importation des données : 
+       <table>
+                        <thead>
+                        <tr> 
+                                <th> Titre </th>    
+                                <th> actions </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for p in property %}
+                                                <tr> 
+                                                        <td> {{ p.title }} </td>    
+                                                        <td>  {{ p.description }}  </td>
+                                                        <td> <a href="{{ path('Preporty.crud.edit' , { id : p.id })}}" class="btn btn-secondary " > editer</a>  </td>
+                                                </tr>
+                        {% endfor %}
+                        </tbody>
+       </table> 
+
+        {% endblock %}
+
