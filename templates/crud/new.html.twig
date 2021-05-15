@@ -4,12 +4,15 @@
         
         
         {% block body %}
-
-      
+        
       {{ form_start(form)}}
 
-      <button> sauvgarder </button>
+{{ form_row(form.title)}}
+
+
+
+
+<button> sauvgarder </button>
       {{ form_end(form)}}
-    
         {% endblock %}
 

@@ -4,6 +4,10 @@
         
         
         {% block body %}
+
+          {% for message in app.flashes('success') %}
+         {{ message }}
+        {% endfor %}
         
        importation des données : 
        <table>
@@ -13,14 +17,20 @@
                                 <th> actions </th>
                         </tr>
                         </thead>
+
+
                         <tbody>
                         {% for p in property %}
                                                 <tr> 
                                                         <td> {{ p.title }} </td>    
                                                         <td>  {{ p.description }}  </td>
                                                         <td> <a href="{{ path('Preporty.crud.edit' , { id : p.id })}}" class="btn btn-secondary " > editer</a>  </td>
+                                                        <td> <a href="{{ path('Preporty.crud.delete' , { id : p.id })}}" class="btn btn-danger " > supprimer</a>  </td>
+
                                                 </tr>
                         {% endfor %}
+                        <a href="{{ path('Preporty.crud.new')}}" class="btn btn-secondary " >Ajouter</a>  
+
                         </tbody>
        </table> 
 
